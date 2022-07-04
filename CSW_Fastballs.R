@@ -3,10 +3,10 @@ library(tidyverse)
 
 csw = read.csv(file.choose())
 
-csw_rp = subset(csw, csw$IP > 20 & csw$IP < 50)
-csw_sp = subset(csw, csw$IP > 50)
+csw_rp = subset(csw, csw$IP >= 20 & csw$IP < 50)
+csw_sp = subset(csw, csw$IP >= 50)
 
-csw_qualified = subset(csw, csw$IP > 20)
+csw_qualified = subset(csw, csw$IP >= 20)
 
 avg_csw_fb = round(100 * ((sum(csw_qualified$C.Strikes) + 
                           sum(csw_qualified$Sw.Strikes)) / 
